@@ -9,12 +9,12 @@
             <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
 
             {%for temp in data%}
-                   <div class="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+      <div class="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
       <div class="relative mb-6">
- <img class="card-img-top" data-src="holder.js/100px60/" alt="100%x60" src="{{temp.image}}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
-         <div class="text-center absolute w-full" style="bottom: -30px">
+ <img class="card-img-top" data-src="holder.js/100px60/" alt="100%x60" src="https://th.bing.com/th/id/OIP.P6ZK02kOFZ8pD0sSdyagogHaGA?pid=ImgDet&rs=1" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
+         {% comment %} <div class="text-center absolute w-full" style="bottom: -100px">
             <div class="mb-10">
-               <p class="text-white tracking-wide uppercase text-lg font-bold">Witch</p>
+               <p class="text-white tracking-wide uppercase text-lg font-bold">{{temp.name}}</p>
                <p class="text-gray-400 text-sm">@witch_forever</p>
             </div>
             <button class="p-4 rounded-full transition ease-in duration-200 focus:outline-none">
@@ -24,24 +24,51 @@
                      C15.952,9,16,9.447,16,10z" />
                </svg>
             </button>
-         </div>
+         </div> {% endcomment %}
       </div>
-      <div class="py-10 px-6 text-center tracking-wide grid grid-cols-3 gap-6">
+
+      <div class="py-6 px-4 text-center tracking-wide grid grid-cols-3 gap-6">
          <div class="posts">
-            <p class="text-lg">324</p>
-            <p class="text-gray-400 text-sm">Posts</p>
+            <p class="text-lg">8GB</p>
+            <p class="text-gray-400 text-sm">RAM</p>
          </div>
          <div class="followers">
-            <p class="text-lg">7542</p>
-            <p class="text-gray-400 text-sm">Followers</p>
+            <p class="text-lg">128GB</p>
+            <p class="text-gray-400 text-sm">ROM</p>
          </div>
          <div class="following">
-            <p class="text-lg">295</p>
-            <p class="text-gray-400 text-sm">Following</p>
+            <p class="text-lg">29000</p>
+            <p class="text-gray-400 text-sm">Price</p>
          </div>
       </div>
    </div>
-
+<div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src="https://th.bing.com/th/id/OIP.P6ZK02kOFZ8pD0sSdyagogHaGA?pid=ImgDet&rs=1" class="img-fluid"/>
+    <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="py-6 px-4 text-center tracking-wide grid grid-cols-3 gap-6">
+      <div class="posts">
+         <p class="text-lg">8GB</p>
+         <p class="text-gray-400 text-sm">RAM</p>
+      </div>
+      <div class="followers">
+         <p class="text-lg">128GB</p>
+         <p class="text-gray-400 text-sm">ROM</p>
+      </div>
+      <div class="following">
+         <p class="text-lg">29000</p>
+         <p class="text-gray-400 text-sm">Price</p>
+      </div>
+   </div>
+    <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+</div>
                 {%endfor%}
             </div>
             
@@ -55,5 +82,8 @@
                 </div>
             </div>
         </div>
+
+
+
 
 {% endblock body %}
