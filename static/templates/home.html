@@ -11,8 +11,8 @@
             {%for temp in data%}
       <div class="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
       <div class="relative mb-6">
- <img class="card-img-top" data-src="holder.js/100px60/" alt="100%x60" src="https://th.bing.com/th/id/OIP.P6ZK02kOFZ8pD0sSdyagogHaGA?pid=ImgDet&rs=1" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
-         {% comment %} <div class="text-center absolute w-full" style="bottom: -100px">
+ <a href="{{temp.image}}"><div class=""></div><img class="card-img-top" data-src="holder.js/100px60/" alt="100%x60" src="{{temp.image}}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;"></a>
+         <!-- {% comment %} <div class="text-center absolute w-full" style="bottom: -100px">
             <div class="mb-10">
                <p class="text-white tracking-wide uppercase text-lg font-bold">{{temp.name}}</p>
                <p class="text-gray-400 text-sm">@witch_forever</p>
@@ -24,62 +24,37 @@
                      C15.952,9,16,9.447,16,10z" />
                </svg>
             </button>
-         </div> {% endcomment %}
-      </div>
+         </div> {% endcomment %} -->
 
+      </div>
+      <form action="/product_details" method ="post" id="Systemform2" >
+         {% csrf_token %}
+         
+         <button type="Submit" class="btn btn-light"name="product_details" value="{{temp.id}}" form="Systemform2" class="read_more"><h3>{{temp.title}}</h3></button>
+        </form>
+      
       <div class="py-6 px-4 text-center tracking-wide grid grid-cols-3 gap-6">
          <div class="posts">
-            <p class="text-lg">8GB</p>
-            <p class="text-gray-400 text-sm">RAM</p>
+            
+            <p class="text-lg">{{temp.ram}}</p>
+            <p class="text-green-400 text-sm">RAM</p>
          </div>
          <div class="followers">
-            <p class="text-lg">128GB</p>
-            <p class="text-gray-400 text-sm">ROM</p>
+            <p class="text-lg">{{temp.rom}}</p>
+            <p class="text-red-400 text-sm">ROM</p>
          </div>
          <div class="following">
-            <p class="text-lg">29000</p>
-            <p class="text-gray-400 text-sm">Price</p>
+            <p class="text-lg">{{temp.price}}</p>
+            <p class="text-green-400 text-sm">Price</p>
          </div>
       </div>
    </div>
-<div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="https://th.bing.com/th/id/OIP.P6ZK02kOFZ8pD0sSdyagogHaGA?pid=ImgDet&rs=1" class="img-fluid"/>
-    <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    </a>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="py-6 px-4 text-center tracking-wide grid grid-cols-3 gap-6">
-      <div class="posts">
-         <p class="text-lg">8GB</p>
-         <p class="text-gray-400 text-sm">RAM</p>
-      </div>
-      <div class="followers">
-         <p class="text-lg">128GB</p>
-         <p class="text-gray-400 text-sm">ROM</p>
-      </div>
-      <div class="following">
-         <p class="text-lg">29000</p>
-         <p class="text-gray-400 text-sm">Price</p>
-      </div>
-   </div>
-    <a href="#!" class="btn btn-primary">Button</a>
-  </div>
-</div>
+
                 {%endfor%}
             </div>
             
             <div class="flex justify-center">
-                <div class="flex rounded-md mt-8">
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 border-r-0 ml-0 rounded-l hover:bg-blue-500 hover:text-white"><span>Previous</a></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 border-r-0 hover:bg-blue-500 hover:text-white"><span>1</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 border-r-0 hover:bg-blue-500 hover:text-white"><span>2</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 border-r-0 hover:bg-blue-500 hover:text-white"><span>3</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 rounded-r hover:bg-blue-500 hover:text-white"><span>Next</span></a>
-                </div>
+               <a class="nav-link  {% block profileactive%}{% endblock profileactive%}" href="/phones">See All</a>
             </div>
         </div>
 
